@@ -4,14 +4,20 @@ import java.util.Arrays;
 
 public class QuickSort {
 
+    private static int count = 0;
+
     public static void main(String[] args) {
         int[] array = {1, 9, 2, 5, 0, 3, 8, 3, 9, 3, 1, 7};
         System.out.println(Arrays.toString(array));
         quickSort(array, 0, array.length - 1);
         System.out.println(Arrays.toString(array));
+
+        System.out.println("Количество вызовов метода - " + count);
     }
 
     public static void quickSort(int[] array, int start, int end) {
+
+        count++;
 
         if (start >= end) {
             return;
