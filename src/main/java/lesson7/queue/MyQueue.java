@@ -33,10 +33,25 @@ public class MyQueue {
             return null;
         }
         size--;
-        String element = elements[start];
-        if (start != end) {
-            start++;
+        String result = elements[start++];
+        if (empty()) {
+            start = 0;
+            end = 0;
         }
-        return element;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        if (empty()) {
+            return "[]";
+        }
+        StringBuilder builder = new StringBuilder("[");
+        for (int i = start; i <= end; i++) {
+            builder.append(elements[i]).append(", ");
+        }
+        builder.setLength(builder.length() - 2);
+        builder.append("]");
+        return builder.toString();
     }
 }

@@ -34,5 +34,12 @@ public class QueueTest {
         queue.push("F");
         queue.push("G");
         queue.push("H");
+
+        System.out.println(queue.pop());
+        System.out.println(queue.pop());
+        System.out.println(queue.pop());
+        System.out.println(queue.pop());
+
+        queue.push("I");
     }
 }
